@@ -172,10 +172,6 @@ else if (choice == "Döda" || choice == "döda")
   }
 }
 
-else
-{
-  Console.WriteLine("du dog för att du inte kunde stava");
-}
 
 Console.WriteLine("tryck ENTER för att avsluta");
 Console.ReadLine();
