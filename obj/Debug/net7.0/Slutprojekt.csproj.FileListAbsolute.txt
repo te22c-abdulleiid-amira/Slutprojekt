@@ -1,0 +1,14 @@
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\bin\Debug\net7.0\Slutprojekt.exe
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\bin\Debug\net7.0\Slutprojekt.deps.json
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\bin\Debug\net7.0\Slutprojekt.runtimeconfig.json
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\bin\Debug\net7.0\Slutprojekt.dll
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\bin\Debug\net7.0\Slutprojekt.pdb
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.AssemblyInfoInputs.cache
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.AssemblyInfo.cs
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.csproj.CoreCompileInputs.cache
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.dll
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\refint\Slutprojekt.dll
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.pdb
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\Slutprojekt.genruntimeconfig.cache
+c:\Users\amira.abdulleiid\Documents\Prog\Slutprojekt\Slutprojekt\Slutprojekt\obj\Debug\net7.0\ref\Slutprojekt.dll
