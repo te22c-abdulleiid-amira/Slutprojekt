@@ -100,7 +100,7 @@ else if (choice == "Döda" || choice == "döda")
     int p1Hp = 127;
     int p2Hp = 100;
     string p1Name = $"{playerName}";
-    string p2Name = "Doubbleganger";
+    string p2Name = "Doppelganger";
 
     Random generator = new Random();
 
@@ -136,6 +136,7 @@ else if (choice == "Döda" || choice == "döda")
     }
     else
     {
+      Långsam("...");
       Green($"{p1Name} har vunnit.");
 
     // Sista nivån på spelet blir att lösa den hemliga koden.
