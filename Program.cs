@@ -11,7 +11,6 @@ SavePlayerName(playerName);
 Typewriter($"Välkomen, {playerName}. Vet du vad majoritetsröstning är?");
 
 // Spelets start
-
 Console.Clear();
 Typewriter("1");
 Långsam("...");
@@ -101,7 +100,7 @@ else if (choice == "Döda" || choice == "döda")
     int p1Hp = 127;
     int p2Hp = 100;
     string p1Name = $"{playerName}";
-    string p2Name = "player 2";
+    string p2Name = "Doubbleganger";
 
     Random generator = new Random();
 
@@ -161,9 +160,6 @@ else if (choice == "Döda" || choice == "döda")
          Typewriter("Om du inte listade ut koden så är den \"11037\".");
         }
     }
-
-    
-    
   }
 
   else
@@ -171,8 +167,6 @@ else if (choice == "Döda" || choice == "döda")
     Console.WriteLine("skriv tydligt idiot");
   }
 }
-
-
 Console.WriteLine("tryck ENTER för att avsluta");
 Console.ReadLine();
 
@@ -227,7 +221,6 @@ static void Green(string test)
   Console.ForegroundColor = orig;
   Console.ReadLine();
   } 
-
 
 // Spara spelarens namn
 static void SavePlayerName(string playerName)
