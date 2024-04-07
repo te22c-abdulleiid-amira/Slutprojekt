@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Media;
 
+
 // Spara spelarens namn
 string choice = "playerName"; // Utför operationer baserat på valet
 Typewriter("Vad heter du?");
@@ -33,9 +34,9 @@ choice = choice.ToLower();
 
 
 // Första valen
-if (choice == "Leva" || choice == "leva")
+if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||" variablen kan jag lägga till flera alternativ som ger samma resultat
 {
-  Console.Clear();
+  Console.Clear(); //rensa texten från innan 
   Typewriter("1");
   Långsam("...");
   Red("Du röstade på \"Leva\".");
@@ -50,11 +51,9 @@ if (choice == "Leva" || choice == "leva")
   Typewriter("Luften blev varmare, och snabbt blev det svårt att stå på golvet.");
   Red("\"Ni valde fel dör, straffet börjar nu.\"");
   Typewriter("En efter en, så sprang alla till dörren. För att vara helt ärlig så är det exact vad du också gjorde.");
-  Typewriter("Men ingenting fungerade. Det blev varmare, sedan sp blev allt svart.");
+  Typewriter("Men ingenting fungerade. Det blev varmare, sedan så blev allt svart.");
   Red("Du dog");
   Console.Clear();
-
-  Typewriter("Vill du försöka igen?");
 }
 else if (choice == "Döda" || choice == "döda")
 {
@@ -71,10 +70,20 @@ else if (choice == "Döda" || choice == "döda")
   Typewriter("Det tar inte lång tid för alla att ha samlat sig i rummet med dörren \"Döda\". När alla väll var inne tog det inte lång tid för dörren att kraftigt stängas.");
   Green("\"Ni valde rätt dörr. Nu börjar nästa nivå.\"");
   Console.Clear();
+  // Del 2
   Långsam("...");
   Typewriter("Ni befinner er i en arena. Arenan är fyld med oöppnade lådor. Dessutom så märkte du elva stycken fyrkanter på marken som stod på rad.");
   Typewriter("\"Kongratulerar, ni klarade uppvärmningen. Var vänligen och ställ er på varsin fyrkant.\"");
-  Typewriter("SKRIV FLIGHT");
+  Typewriter("Du och alla de andra går till varsin fyrkant.");
+  Typewriter("Inte långt efter så börjar golvet att skaka.");
+  Typewriter("Elva luckor på marken öppnas framför varje person i arenan och sedan så stack ett huvud ut på luckan framför dig.");
+  Typewriter("Då såg du en otolig bekant person, en person du kände bäst, men såg mindre en andra.");
+  Typewriter("Personen du såg framför dig var");
+  Red("Du.");
+  Typewriter("Det var helt otroligt hur mycket personen liknade dig, till och med du själv blev lurad för en sekund.");
+  Typewriter("\"Välkommen till nivå två. Här får ni ett vall. Väljer du att slåss mot din dubbelgångare, eller fly?\"");
+  Typewriter("\"Ni båda får varsit svärd. Den sista som står på både benen av er tar sig till nästa nivå.\"");
+  Typewriter("Vad röstar du på? Fight or Flight");
 
   choice = Console.ReadLine();
   choice = choice.ToLower();
@@ -87,15 +96,30 @@ else if (choice == "Döda" || choice == "döda")
     Typewriter("7");
     Långsam("...");
     Typewriter("Du röstade på \"Flight\".");
+    Typewriter("Alla blir tilldelade varsit svärd, även dubbelgångarna får varsin.");
+    Typewriter("Tiden börjar därmed räkna ner.");
+    Långsam("3 ...  2  ... 1");
+    Typewriter("Du hörde ett skott och märkte att alla började springa. Du ser även någon springa med snabba steg mot dig.");
+    Typewriter("Du hinner inte reagera innan du känner en obegriplig smärta i din mage. Du ser ett svärd åka in och ut från din mage.");
+    Typewriter("Du var för sen och kolapsade.");
+    Typewriter("Din syn var blurrig, men du hörde fotspår närma sig.");
+    Typewriter("Du gör ditt bästa för att titta på din motståndare så tittar ner på dig.");
+    Typewriter("Direkt innan du tappar sinnet hör du den säga:");
+    Red($"Jag är {playerName} nu.");
+    Red("Du dog.");
   }
 
-  else if (choice == "fight")
+  else if (choice == "fight" || choice == "Fight")
   {
     Console.Clear();
     Typewriter("3");
     Långsam("...");
-    Typewriter("Du bestämmer er för att slås tillbaka.");
+    Typewriter("Du bestämmer dig för att slås tillbaka.");
     Typewriter("Det är nu eller aldrig.");
+    Typewriter("Ni får varsit svärd och så börjar tiden att gå ner.");
+    Långsam("3 ...  2  ... 1");
+    Typewriter("Du håller hårt i ditt svärd och tittar din motståndare i ögonen.");
+    Typewriter("Det är nu det händer.");
     
     int p1Hp = 127;
     int p2Hp = 100;
@@ -107,22 +131,22 @@ else if (choice == "Döda" || choice == "döda")
     // Här börjar man slås
     while (p1Hp > 0 && p2Hp > 0)
     {
-      Typewriter($"{p1Name}: {p1Hp}  {p2Name}: {p2Hp}\n");
+      Typewriter($"{p1Name}: har {p1Hp} energi och {p2Name}: har {p2Hp} energi.\n");
 
       int heroDamage = generator.Next(50);
       p2Hp -= heroDamage;
       p2Hp = Math.Max(0, p2Hp);
-      Typewriter($"{p1Name} throws shade at {p2Name} minus {heroDamage} braincells");
+      Typewriter($"{p1Name} träffar {p2Name} med sitt svärd och förlorar mycket blood. Minus {heroDamage} energi.");
 
       int villainDamage = generator.Next(50);
       p1Hp -= villainDamage;
       p1Hp = Math.Max(0, p1Hp);
-      Typewriter($"{p2Name} DRAGGS {p1Name} minus {p1Name} hairstrands");
+      Typewriter($"{p2Name} träffar {p1Name} på benet. Förlorar {p1Name} energi.");
       Console.ReadLine();
     }
 
-    Console.WriteLine("Nu var tiden ute.");
-    Console.WriteLine("Resultatet är...");
+    Typewriter("Nu var tiden ute.");
+    Typewriter("Resultatet är...");
     if (p1Hp == 0 && p2Hp == 0)
     {
       Långsam("...");
@@ -133,11 +157,17 @@ else if (choice == "Döda" || choice == "döda")
     {
       Långsam("...");
       Red($"{p2Name} har vunnit.");
+      Typewriter("Din syn var blurrig, men du hörde fotspår närma sig.");
+      Typewriter("Du gör ditt bästa för att titta på din motståndare så tittar ner på dig.");
+      Typewriter("Direkt innan du tappar sinnet hör du den säga:");
+      Red($"Jag är {playerName} nu.");
+      Red("Du dog.");
     }
     else
     {
       Långsam("...");
       Green($"{p1Name} har vunnit.");
+      Typewriter("Du ser sin föredetta motståndare liga på marken, nästan helt livlöst.");
 
     // Sista nivån på spelet blir att lösa den hemliga koden.
     string name = Console.ReadLine().ToLower();
@@ -158,6 +188,7 @@ else if (choice == "Döda" || choice == "döda")
          Långsam("...");
          Red("Fel kod.");
          Typewriter("");
+         Långsam("...");
          Typewriter("Om du inte listade ut koden så är den \"11037\".");
         }
     }
@@ -165,12 +196,11 @@ else if (choice == "Döda" || choice == "döda")
 
   else
   {
-    Console.WriteLine("skriv tydligt idiot");
+    Console.WriteLine("Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar.");
   }
 }
-Console.WriteLine("tryck ENTER för att avsluta");
+Console.WriteLine("Tryck ENTER för att avsluta");
 Console.ReadLine();
-
 
 
 // Använder mig av metoden DRY (Don't repeat yourself) för att förkorta koden med hjälp av loopar.
