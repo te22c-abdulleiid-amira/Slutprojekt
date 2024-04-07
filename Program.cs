@@ -10,28 +10,34 @@ Typewriter("Vad heter du?");
 string playerName = Console.ReadLine();
 SavePlayerName(playerName);
 Typewriter($"Välkomen, {playerName}. Vet du vad majoritetsröstning är?");
+Console.Clear();
+
+// Kaptiel vall
+// Typewriter("Vill du hoppa till en annat kapitel eller köra spelet från början?");
+// Typewriter("Skriv Ja eller Nej.");
+// choice = Console.ReadLine();
+// choice = choice.ToLower();
+
+// if (choice == "nej" || choice == "Nej")
+// {
+
 
 // Spelets start
 Console.Clear();
 Typewriter("1");
 Långsam("...");
-Typewriter("\"Var det den sista?\" ");
-Typewriter("\"Jag tror det.\"");
 Typewriter("Du vaknar i ett rum med tio andra personer du aldrig sett förut.");
-Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder. Det gick från pensionärer till barn.");
-Typewriter("Å andra sidan så var det inget märkvärdigt med rummet, vit och liten.");
+Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder.");
 Typewriter("Men, rummet hade två dörrar framför sig.");
 Typewriter("På ena dörren så stod det \"Leva\", och på den andra så stodd det \"Döda\".");
-Typewriter("Då så hördes det.");
 Typewriter("\"Välkomen, ni alla har tur att få vara experimenten i vårat projekt. Jag ska hålla detta kort så lyssna på mina instruk-tioner noga.\"");
 Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på nästa nivå, andra gör inte det. Och med majoritet röstning, så röstar ni tillsammans vilken dörr ni bör ta.\"");
 Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
 Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
 Typewriter("Vilken dörr väljer du?");
-
+// }
 choice = Console.ReadLine();
 choice = choice.ToLower();
-
 
 // Första valen
 if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||" variablen kan jag lägga till flera alternativ som ger samma resultat
@@ -55,7 +61,7 @@ if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||
   Red("Du dog");
   Console.Clear();
 }
-else if (choice == "Döda" || choice == "döda")
+else if (choice == "Döda" || choice == "döda" || choice == "1")
 {
   Console.Clear();
   Typewriter("0");
@@ -109,7 +115,7 @@ else if (choice == "Döda" || choice == "döda")
     Red("Du dog.");
   }
 
-  else if (choice == "fight" || choice == "Fight")
+  else if (choice == "fight" || choice == "Fight" || choice == "2")
   {
     Console.Clear();
     Typewriter("3");
@@ -121,27 +127,28 @@ else if (choice == "Döda" || choice == "döda")
     Typewriter("Du håller hårt i ditt svärd och tittar din motståndare i ögonen.");
     Typewriter("Det är nu det händer.");
     
-    int p1Hp = 127;
+    int p1Hp = 100;
     int p2Hp = 100;
-    string p1Name = $"{playerName}";
-    string p2Name = "Doppelganger";
+    string p1Name = "Dubbelgångaren";
+    string p2Name = $"{playerName}";
 
     Random generator = new Random();
 
     // Här börjar man slås
     while (p1Hp > 0 && p2Hp > 0)
     {
-      Typewriter($"{p1Name}: har {p1Hp} energi och {p2Name}: har {p2Hp} energi.\n");
+      Console.Clear();
+      Typewriter($"{p2Name} har {p2Hp} energi och {p1Name} har {p1Hp} energi.\n");
 
       int heroDamage = generator.Next(50);
       p2Hp -= heroDamage;
       p2Hp = Math.Max(0, p2Hp);
       Typewriter($"{p1Name} träffar {p2Name} med sitt svärd och förlorar mycket blood. Minus {heroDamage} energi.");
 
-      int villainDamage = generator.Next(50);
+      int villainDamage = generator.Next(30);
       p1Hp -= villainDamage;
       p1Hp = Math.Max(0, p1Hp);
-      Typewriter($"{p2Name} träffar {p1Name} på benet. Förlorar {p1Name} energi.");
+      Typewriter($"{p2Name} träffar {p1Name} på benet.{p1Name} förlorar {villainDamage} energi.");
       Console.ReadLine();
     }
 
@@ -149,25 +156,34 @@ else if (choice == "Döda" || choice == "döda")
     Typewriter("Resultatet är...");
     if (p1Hp == 0 && p2Hp == 0)
     {
+      Console.Clear();
       Långsam("...");
       Typewriter("Ni båda hade förlorat för mycket blod för att fortsätta och långsamt dog.");
       Typewriter("Oavgjort.");
     }
-    else if (p1Hp == 0)
+
+    else if (p2Hp == 0)
     {
+      Console.Clear();
       Långsam("...");
-      Red($"{p2Name} har vunnit.");
+      Red($"{p1Name} har vunnit.");
       Typewriter("Din syn var blurrig, men du hörde fotspår närma sig.");
       Typewriter("Du gör ditt bästa för att titta på din motståndare så tittar ner på dig.");
+      Typewriter("Du ser siffrorna \"11037\" på din motståndares tröja, varför är det vikigt?");
       Typewriter("Direkt innan du tappar sinnet hör du den säga:");
       Red($"Jag är {playerName} nu.");
       Red("Du dog.");
     }
+
     else
     {
       Långsam("...");
-      Green($"{p1Name} har vunnit.");
+      Green($"{p2Name} har vunnit.");
       Typewriter("Du ser sin föredetta motståndare liga på marken, nästan helt livlöst.");
+      Typewriter("Du börjar undra, var det en riktig människa?");
+      Typewriter("Den blöder som en vanlig männsika skulle");
+      Typewriter("");
+
 
     // Sista nivån på spelet blir att lösa den hemliga koden.
     string name = Console.ReadLine().ToLower();
@@ -182,6 +198,7 @@ else if (choice == "Döda" || choice == "döda")
           Red("1");
           Console.Clear();
         }
+
       else
         {
          Console.Clear();
@@ -196,11 +213,24 @@ else if (choice == "Döda" || choice == "döda")
 
   else
   {
-    Console.WriteLine("Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar.");
+    Console.WriteLine("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
   }
+
 }
+
+// else (choice == "ja" || choice == "Ja")
+// {
+//   Typewriter("Vilken kapitel vill du till?");
+//   Typewriter("Skriv 1 eller 2");
+//   choice = Console.ReadLine();
+//   choice = choice.ToLower();
+// }
+
 Console.WriteLine("Tryck ENTER för att avsluta");
 Console.ReadLine();
+
+
+
 
 
 // Använder mig av metoden DRY (Don't repeat yourself) för att förkorta koden med hjälp av loopar.
@@ -214,7 +244,7 @@ static void Typewriter(string test)
   Console.ReadLine();
 }
 
-// Långam text
+// Långsam text
 static void Långsam(string test)
 {
   foreach (char c in test)
@@ -237,7 +267,7 @@ static void Red(string test)
   }
   Console.ForegroundColor = orig;
   Console.ReadLine();
-  } 
+} 
 
 // Grön text
 static void Green(string test) 
@@ -251,12 +281,11 @@ static void Green(string test)
   }
   Console.ForegroundColor = orig;
   Console.ReadLine();
-  } 
+} 
 
 // Spara spelarens namn
 static void SavePlayerName(string playerName)
 {
   string fileName = "playerName.txt"; // namn på filen som ska spara spelarens namn
   File.WriteAllText(@"playerName.txt", "wowow");
-
 }
