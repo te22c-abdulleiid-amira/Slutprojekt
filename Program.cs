@@ -2,6 +2,11 @@
 using System.Drawing;
 using System.IO;
 using System.Media;
+using System.Windows;
+using System.Threading;
+using System.Runtime.InteropServices;
+
+
 
 
 // Spara spelarens namn
@@ -10,16 +15,24 @@ Typewriter("Vad heter du?");
 string playerName = Console.ReadLine();
 SavePlayerName(playerName);
 Typewriter($"Välkomen, {playerName}. Vet du vad majoritetsröstning är?");
+TurnScreenRedForDuration();
 Console.Clear();
 
 // Kaptiel vall
-// Typewriter("Vill du hoppa till en annat kapitel eller köra spelet från början?");
-// Typewriter("Skriv Ja eller Nej.");
-// choice = Console.ReadLine();
-// choice = choice.ToLower();
+Typewriter("Vill du hoppa till en annat kapitel eller köra spelet från början?");
+Typewriter("Skriv Ja eller Nej.");
+choice = Console.ReadLine();
+choice = choice.ToLower();
 
-// if (choice == "nej" || choice == "Nej")
-// {
+if (choice == "ja" || choice == "Ja")
+{
+  Typewriter("Vilken kapitel vill du till?");
+  Typewriter("Skriv 1 eller 2");
+  choice = Console.ReadLine();
+  choice = choice.ToLower();
+}
+else if (choice == "nej" || choice == "Nej")
+{
 
 
 // Spelets start
@@ -35,7 +48,8 @@ Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på 
 Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
 Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
 Typewriter("Vilken dörr väljer du?");
-// }
+
+}
 choice = Console.ReadLine();
 choice = choice.ToLower();
 
@@ -218,13 +232,7 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
 
 }
 
-// else (choice == "ja" || choice == "Ja")
-// {
-//   Typewriter("Vilken kapitel vill du till?");
-//   Typewriter("Skriv 1 eller 2");
-//   choice = Console.ReadLine();
-//   choice = choice.ToLower();
-// }
+
 
 Console.WriteLine("Tryck ENTER för att avsluta");
 Console.ReadLine();
@@ -288,4 +296,54 @@ static void SavePlayerName(string playerName)
 {
   string fileName = "playerName.txt"; // namn på filen som ska spara spelarens namn
   File.WriteAllText(@"playerName.txt", "wowow");
+}
+
+
+
+// Röd effekt - hade problem med att den först blinkade, 
+static void Main()
+{
+  // Start a new thread to handle the red screen effect
+  Thread redScreenThread = new Thread(TurnScreenRedForDuration);
+  redScreenThread.Start();
+  // Your game loop
+  while (true)
+  {
+   // Simulate game loop delay
+    Thread.Sleep(16); // Adjust delay as per your game's required frame rate
+  }
+}
+
+static void TurnScreenRedForDuration()
+{
+  // Initial intensity of red color
+  int intensity = 15;
+
+  // Gradually increase the intensity of the red color
+  for (; intensity <= 15; intensity++)
+  {
+      Console.BackgroundColor = ConsoleColor.DarkRed;
+      Console.Clear();
+      Thread.Sleep(50); // för att pausa trådens exekvering under en specifik tidsperiod
+  }
+
+  // Wait for a specified duration with fully red screen
+  Thread.Sleep(2000); // Change 2000 to your desired duration in milliseconds
+
+    // Gradually fade out the red color
+  for (; intensity >= 0; intensity--)
+  {
+    Console.BackgroundColor = ConsoleColor.DarkRed;
+    Console.Clear();
+    Thread.Sleep(100); // Wait for 100 milliseconds
+
+    // Decrease the intensity of red
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.Clear(); // Do not clear the console here
+    Thread.Sleep(50); // Wait for 50 milliseconds
+  }
+
+// Clear the console after fading out
+  Console.Clear();
+
 }
