@@ -15,7 +15,6 @@ Typewriter("Vad heter du?");
 string playerName = Console.ReadLine();
 SavePlayerName(playerName);
 Typewriter($"Välkomen, {playerName}. Vet du vad majoritetsröstning är?");
-TurnScreenRedForDuration();
 Console.Clear();
 
 // Kaptiel vall
@@ -35,23 +34,23 @@ else if (choice == "nej" || choice == "Nej")
 {
 
 
-// Spelets start
-Console.Clear();
-Typewriter("1");
-Långsam("...");
-Typewriter("Du vaknar i ett rum med tio andra personer du aldrig sett förut.");
-Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder.");
-Typewriter("Men, rummet hade två dörrar framför sig.");
-Typewriter("På ena dörren så stod det \"Leva\", och på den andra så stodd det \"Döda\".");
-Typewriter("\"Välkomen, ni alla har tur att få vara experimenten i vårat projekt. Jag ska hålla detta kort så lyssna på mina instruk-tioner noga.\"");
-Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på nästa nivå, andra gör inte det. Och med majoritet röstning, så röstar ni tillsammans vilken dörr ni bör ta.\"");
-Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
-Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
-Typewriter("Vilken dörr väljer du?");
-
+  // Spelets start
+  Console.Clear();
+  Typewriter("1");
+  Långsam("...");
+  Typewriter("Du vaknar i ett rum med tio andra personer du aldrig sett förut.");
+  Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder.");
+  Typewriter("Men, rummet hade två dörrar framför sig.");
+  Typewriter("På ena dörren så stod det \"Leva\", och på den andra så stodd det \"Döda\".");
+  Typewriter("\"Välkomen, ni alla har tur att få vara experimenten i vårat projekt. Jag ska hålla detta kort så lyssna på mina instruk-tioner noga.\"");
+  Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på nästa nivå, andra gör inte det. Och med majoritet röstning, så röstar ni tillsammans vilken dörr ni bör ta.\"");
+  Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
+  Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
+  Typewriter("Vilken dörr väljer du?");
+  choice = Console.ReadLine();
+  choice = choice.ToLower();
 }
-choice = Console.ReadLine();
-choice = choice.ToLower();
+
 
 // Första valen
 if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||" variablen kan jag lägga till flera alternativ som ger samma resultat
@@ -72,8 +71,7 @@ if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||
   Red("\"Ni valde fel dör, straffet börjar nu.\"");
   Typewriter("En efter en, så sprang alla till dörren. För att vara helt ärlig så är det exact vad du också gjorde.");
   Typewriter("Men ingenting fungerade. Det blev varmare, sedan så blev allt svart.");
-  Red("Du dog");
-  Console.Clear();
+  Död();
 }
 else if (choice == "Döda" || choice == "döda" || choice == "1")
 {
@@ -126,7 +124,7 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
     Typewriter("Du gör ditt bästa för att titta på din motståndare så tittar ner på dig.");
     Typewriter("Direkt innan du tappar sinnet hör du den säga:");
     Red($"Jag är {playerName} nu.");
-    Red("Du dog.");
+    Död();
   }
 
   else if (choice == "fight" || choice == "Fight" || choice == "2")
@@ -140,7 +138,7 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
     Långsam("3 ...  2  ... 1");
     Typewriter("Du håller hårt i ditt svärd och tittar din motståndare i ögonen.");
     Typewriter("Det är nu det händer.");
-    
+
     int p1Hp = 100;
     int p2Hp = 100;
     string p1Name = "Dubbelgångaren";
@@ -174,6 +172,7 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
       Långsam("...");
       Typewriter("Ni båda hade förlorat för mycket blod för att fortsätta och långsamt dog.");
       Typewriter("Oavgjort.");
+      Rödscreen();
     }
 
     else if (p2Hp == 0)
@@ -186,7 +185,7 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
       Typewriter("Du ser siffrorna \"11037\" på din motståndares tröja, varför är det vikigt?");
       Typewriter("Direkt innan du tappar sinnet hör du den säga:");
       Red($"Jag är {playerName} nu.");
-      Red("Du dog.");
+      Död();
     }
 
     else
@@ -199,42 +198,43 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
       Typewriter("");
 
 
-    // Sista nivån på spelet blir att lösa den hemliga koden.
-    string name = Console.ReadLine().ToLower();
+      // Sista nivån på spelet blir att lösa den hemliga koden.
+      string name = Console.ReadLine().ToLower();
       if (name == "11037")
-        {
-          Console.Clear();
-          Långsam("...");
-          Green("Korrekt.");
-          Typewriter("Du är fri att gå om.");
-          Typewriter("3");
-          Typewriter("2");
-          Red("1");
-          Console.Clear();
-        }
+      {
+        Console.Clear();
+        Långsam("...");
+        Green("Korrekt.");
+        Typewriter("Du är fri att gå om.");
+        Typewriter("3");
+        Typewriter("2");
+        Red("1");
+        Console.Clear();
+      }
 
       else
-        {
-         Console.Clear();
-         Långsam("...");
-         Red("Fel kod.");
-         Typewriter("");
-         Långsam("...");
-         Typewriter("Om du inte listade ut koden så är den \"11037\".");
-        }
+      {
+        Console.Clear();
+        Långsam("...");
+        Red("Fel kod.");
+        Död();
+        Långsam("...");
+        Typewriter("Om du inte listade ut koden så är den \"11037\".");
+      }
     }
   }
 
   else
   {
-    Console.WriteLine("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
+    Typewriter("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
   }
 
 }
 
 
-
-Console.WriteLine("Tryck ENTER för att avsluta");
+Rödscreen();
+Typewriter("Var fösiktig och tryck inte ENTER för mycket annars går spelet sönder.");
+Typewriter("Tryck ENTER för att avsluta");
 Console.ReadLine();
 
 
@@ -264,32 +264,32 @@ static void Långsam(string test)
 }
 
 // Röd text
-static void Red(string test) 
-    { 
-      ConsoleColor orig = Console.ForegroundColor;
-        Console.ForegroundColor = ConsoleColor.DarkRed; 
-        foreach (char c in test)
+static void Red(string test)
+{
+  ConsoleColor orig = Console.ForegroundColor;
+  Console.ForegroundColor = ConsoleColor.DarkRed;
+  foreach (char c in test)
   {
     Console.Write(c);
     Thread.Sleep(50);
   }
   Console.ForegroundColor = orig;
   Console.ReadLine();
-} 
+}
 
 // Grön text
-static void Green(string test) 
-    { 
-      ConsoleColor orig = Console.ForegroundColor;
-        Console.ForegroundColor = ConsoleColor.Green; 
-        foreach (char c in test)
+static void Green(string test)
+{
+  ConsoleColor orig = Console.ForegroundColor;
+  Console.ForegroundColor = ConsoleColor.Green;
+  foreach (char c in test)
   {
     Console.Write(c);
     Thread.Sleep(50);
   }
   Console.ForegroundColor = orig;
   Console.ReadLine();
-} 
+}
 
 // Spara spelarens namn
 static void SavePlayerName(string playerName)
@@ -300,50 +300,43 @@ static void SavePlayerName(string playerName)
 
 
 
-// Röd effekt - hade problem med att den först blinkade, 
-static void Main()
+// Röd effekt 
+static void Rödscreen()
 {
-  // Start a new thread to handle the red screen effect
-  Thread redScreenThread = new Thread(TurnScreenRedForDuration);
-  redScreenThread.Start();
-  // Your game loop
-  while (true)
-  {
-   // Simulate game loop delay
-    Thread.Sleep(16); // Adjust delay as per your game's required frame rate
-  }
-}
-
-static void TurnScreenRedForDuration()
-{
-  // Initial intensity of red color
+  // inlednande itensiteten av den röda färgen
   int intensity = 15;
 
-  // Gradually increase the intensity of the red color
+  // öka intensiteten av den röda färgen
   for (; intensity <= 15; intensity++)
   {
-      Console.BackgroundColor = ConsoleColor.DarkRed;
-      Console.Clear();
-      Thread.Sleep(50); // för att pausa trådens exekvering under en specifik tidsperiod
+    Console.BackgroundColor = ConsoleColor.DarkRed;
+    Console.Clear();
+    Thread.Sleep(5); 
   }
 
-  // Wait for a specified duration with fully red screen
-  Thread.Sleep(2000); // Change 2000 to your desired duration in milliseconds
+  // vänta en specific tif för att få röd skärm.
+  Thread.Sleep(100); // millisekunder
 
-    // Gradually fade out the red color
+  // svart och röd blinkande
   for (; intensity >= 0; intensity--)
   {
     Console.BackgroundColor = ConsoleColor.DarkRed;
     Console.Clear();
-    Thread.Sleep(100); // Wait for 100 milliseconds
+    Thread.Sleep(5); 
 
-    // Decrease the intensity of red
+    // minska intensiteten av röd
     Console.BackgroundColor = ConsoleColor.Black;
-    Console.Clear(); // Do not clear the console here
-    Thread.Sleep(50); // Wait for 50 milliseconds
+    Console.Clear();
+    Thread.Sleep(2); 
   }
-
-// Clear the console after fading out
+  // rensa consolen ater blinkandet
   Console.Clear();
+}
 
+// Metod när man dör
+void Död()
+{
+  Red("Du dog.");
+  Rödscreen();
+  Console.Clear();
 }
