@@ -4,8 +4,8 @@ using System.IO;
 using System.Media;
 using System.Windows;
 using System.Threading;
+// using NAudio.Wave;
 using System.Runtime.InteropServices;
-
 
 
 
@@ -15,41 +15,22 @@ Typewriter("Vad heter du?");
 string playerName = Console.ReadLine();
 SavePlayerName(playerName);
 Typewriter($"Välkomen, {playerName}. Vet du vad majoritetsröstning är?");
-Console.Clear();
 
-// Kaptiel vall
-Typewriter("Vill du hoppa till en annat kapitel eller köra spelet från början?");
-Typewriter("Skriv Ja eller Nej.");
+
+// Spelets start
+Console.Clear();
+Typewriter("1");
+Långsam("...");
+Typewriter("Du vaknar i ett rum med tio andra personer du aldrig sett förut.");
+Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder.");
+Typewriter("\"Välkomen, ni alla har tur att få vara experimenten i vårat projekt. Jag ska hålla detta kort så lyssna på mina instruk-tioner noga.\"");
+Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på nästa nivå, andra gör inte det. Och med majoritet röstning, så röstar ni tillsammans vilken dörr ni bör ta.\"");
+Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
+Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
+Typewriter("Vilken dörr väljer du?");
 choice = Console.ReadLine();
 choice = choice.ToLower();
 
-if (choice == "ja" || choice == "Ja")
-{
-  Typewriter("Vilken kapitel vill du till?");
-  Typewriter("Skriv 1 eller 2");
-  choice = Console.ReadLine();
-  choice = choice.ToLower();
-}
-else if (choice == "nej" || choice == "Nej")
-{
-
-
-  // Spelets start
-  Console.Clear();
-  Typewriter("1");
-  Långsam("...");
-  Typewriter("Du vaknar i ett rum med tio andra personer du aldrig sett förut.");
-  Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder.");
-  Typewriter("Men, rummet hade två dörrar framför sig.");
-  Typewriter("På ena dörren så stod det \"Leva\", och på den andra så stodd det \"Döda\".");
-  Typewriter("\"Välkomen, ni alla har tur att få vara experimenten i vårat projekt. Jag ska hålla detta kort så lyssna på mina instruk-tioner noga.\"");
-  Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på nästa nivå, andra gör inte det. Och med majoritet röstning, så röstar ni tillsammans vilken dörr ni bör ta.\"");
-  Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
-  Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
-  Typewriter("Vilken dörr väljer du?");
-  choice = Console.ReadLine();
-  choice = choice.ToLower();
-}
 
 
 // Första valen
@@ -61,10 +42,8 @@ if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||
   Red("Du röstade på \"Leva\".");
   Typewriter("Det blev tyst.");
   Typewriter("Sedan så hördes det:");
-  Typewriter("\"Fem har röstat på.\"");
-  Typewriter("\"Döda.\"");
-  Typewriter("\"Sex av er har röstat.\"");
-  Typewriter("\"Leva.\"");
+  Typewriter("\"Fem har röstat på. Döda.\"");
+  Typewriter("\"Sex av er har röstat. Leva.\"");
   Typewriter("\"Vänligen gå till dörren ni röstat på.\"");
   Typewriter("Det tar inte lång tid för alla att ha samlat sig i rummet med dörren \"Leva\". När alla väll var inne tog det inte lång tid för dörren att kraftigt stängas.");
   Typewriter("Luften blev varmare, och snabbt blev det svårt att stå på golvet.");
@@ -73,32 +52,29 @@ if (choice == "Leva" || choice == "leva") // alternativen där med hjälp av "||
   Typewriter("Men ingenting fungerade. Det blev varmare, sedan så blev allt svart.");
   Död();
 }
-else if (choice == "Döda" || choice == "döda" || choice == "1")
+
+
+else if (choice == "Döda" || choice == "döda")
 {
   Console.Clear();
   Typewriter("0");
   Långsam("...");
   Typewriter("Du röstade på \"Döda\".");
   Typewriter("Sedan så hördes det:");
-  Typewriter("\"Fem har röstat på.\"");
-  Typewriter("\"Leva\"");
-  Typewriter("\"Sex av er har röstat på.\"");
-  Typewriter("\"Döda.\"");
+  Typewriter("\"Fem har röstat på Leva.\"");
+  Typewriter("\"Sex av er har röstat på Döda.\"");
   Typewriter("\"Vänligen gå till dörren ni röstat på.\"");
   Typewriter("Det tar inte lång tid för alla att ha samlat sig i rummet med dörren \"Döda\". När alla väll var inne tog det inte lång tid för dörren att kraftigt stängas.");
   Green("\"Ni valde rätt dörr. Nu börjar nästa nivå.\"");
   Console.Clear();
   // Del 2
   Långsam("...");
-  Typewriter("Ni befinner er i en arena. Arenan är fyld med oöppnade lådor. Dessutom så märkte du elva stycken fyrkanter på marken som stod på rad.");
+  Typewriter("Ni befinner er i en arena. Du märkte elva stycken fyrkanter på marken som stod på rad.");
   Typewriter("\"Kongratulerar, ni klarade uppvärmningen. Var vänligen och ställ er på varsin fyrkant.\"");
-  Typewriter("Du och alla de andra går till varsin fyrkant.");
-  Typewriter("Inte långt efter så börjar golvet att skaka.");
   Typewriter("Elva luckor på marken öppnas framför varje person i arenan och sedan så stack ett huvud ut på luckan framför dig.");
   Typewriter("Då såg du en otolig bekant person, en person du kände bäst, men såg mindre en andra.");
   Typewriter("Personen du såg framför dig var");
   Red("Du.");
-  Typewriter("Det var helt otroligt hur mycket personen liknade dig, till och med du själv blev lurad för en sekund.");
   Typewriter("\"Välkommen till nivå två. Här får ni ett vall. Väljer du att slåss mot din dubbelgångare, eller fly?\"");
   Typewriter("\"Ni båda får varsit svärd. Den sista som står på både benen av er tar sig till nästa nivå.\"");
   Typewriter("Vad röstar du på? Fight or Flight");
@@ -127,8 +103,9 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
     Död();
   }
 
-  else if (choice == "fight" || choice == "Fight" || choice == "2")
+  else if (choice == "fight" || choice == "Fight")
   {
+    void Två() {
     Console.Clear();
     Typewriter("3");
     Långsam("...");
@@ -195,7 +172,15 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
       Typewriter("Du ser sin föredetta motståndare liga på marken, nästan helt livlöst.");
       Typewriter("Du börjar undra, var det en riktig människa?");
       Typewriter("Den blöder som en vanlig männsika skulle");
-      Typewriter("");
+      Typewriter("\"Kongratulerar, alla överlevande.\"");
+      Typewriter("Var god och gå igenom varsin dörr.");
+      Console.Clear();
+      Långsam("");
+      Typewriter("Nu är det bara du, i ett viten vitt rum, och en dörr med ett lås.");
+      Typewriter("Du ser en lapp på golvet framför dörren och tar upp den.");
+      Typewriter("\"Kommer du ihåg koden?\"");
+      Typewriter("Du är medveten av en rad siffror som har visats sig utöver alla testen.");
+      Typewriter("Skriv in koden.");
 
 
       // Sista nivån på spelet blir att lösa den hemliga koden.
@@ -204,6 +189,7 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
       {
         Console.Clear();
         Långsam("...");
+        Grönscreen();
         Green("Korrekt.");
         Typewriter("Du är fri att gå om.");
         Typewriter("3");
@@ -221,7 +207,10 @@ else if (choice == "Döda" || choice == "döda" || choice == "1")
         Långsam("...");
         Typewriter("Om du inte listade ut koden så är den \"11037\".");
       }
+
     }
+    }
+
   }
 
   else
@@ -252,6 +241,7 @@ static void Typewriter(string test)
   Console.ReadLine();
 }
 
+
 // Långsam text
 static void Långsam(string test)
 {
@@ -262,6 +252,7 @@ static void Långsam(string test)
   }
   Console.ReadLine();
 }
+
 
 // Röd text
 static void Red(string test)
@@ -277,6 +268,7 @@ static void Red(string test)
   Console.ReadLine();
 }
 
+
 // Grön text
 static void Green(string test)
 {
@@ -291,13 +283,13 @@ static void Green(string test)
   Console.ReadLine();
 }
 
+
 // Spara spelarens namn
 static void SavePlayerName(string playerName)
 {
   string fileName = "playerName.txt"; // namn på filen som ska spara spelarens namn
   File.WriteAllText(@"playerName.txt", "wowow");
 }
-
 
 
 // Röd effekt 
@@ -333,6 +325,35 @@ static void Rödscreen()
   Console.Clear();
 }
 
+
+// Loop för grön skärm, lik den röda
+static void Grönscreen()
+{
+  int intensity = 15;
+
+  for (; intensity <= 15; intensity++)
+  {
+    Console.BackgroundColor = ConsoleColor.Green;
+    Console.Clear();
+    Thread.Sleep(5); 
+  }
+
+  Thread.Sleep(100); 
+
+  for (; intensity >= 0; intensity--)
+  {
+    Console.BackgroundColor = ConsoleColor.Green;
+    Console.Clear();
+    Thread.Sleep(5); 
+
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.Clear();
+    Thread.Sleep(2); 
+  }
+  Console.Clear();
+}
+
+
 // Metod när man dör
 void Död()
 {
@@ -340,3 +361,4 @@ void Död()
   Rödscreen();
   Console.Clear();
 }
+
