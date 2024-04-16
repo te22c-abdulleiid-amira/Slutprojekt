@@ -25,7 +25,7 @@ Typewriter("Du vaknar i ett rum med tio andra personer du aldrig sett förut.");
 Typewriter("Alla de andra i rummet skiljdes åt kraftigt i utseende och ålder.");
 Typewriter("\"Välkomen, ni alla har tur att få vara experimenten i vårat projekt. Jag ska hålla detta kort så lyssna på mina instruk-tioner noga.\"");
 Typewriter("\"Framför er finns det två dörrar. En av dörrarna tar er in på nästa nivå, andra gör inte det. Och med majoritet röstning, så röstar ni tillsammans vilken dörr ni bör ta.\"");
-Red("\"Men kom ihåg. En av dörrarna ljuger.\"");
+Red("\"Men kom ihåg. Minst en av dörrarna ljuger.\"");
 Typewriter("Alla får sin egen surfplatta som ger röstpanelen.");
 Typewriter("Vilken dörr väljer du?");
 choice = Console.ReadLine();
@@ -105,7 +105,6 @@ else if (choice == "Döda" || choice == "döda")
 
   else if (choice == "fight" || choice == "Fight")
   {
-    void Två() {
     Console.Clear();
     Typewriter("3");
     Långsam("...");
@@ -129,18 +128,18 @@ else if (choice == "Döda" || choice == "döda")
       Console.Clear();
       Typewriter($"{p2Name} har {p2Hp} energi och {p1Name} har {p1Hp} energi.\n");
 
-      int heroDamage = generator.Next(50);
+      int heroDamage = generator.Next(40);
       p2Hp -= heroDamage;
       p2Hp = Math.Max(0, p2Hp);
       Typewriter($"{p1Name} träffar {p2Name} med sitt svärd och förlorar mycket blood. Minus {heroDamage} energi.");
 
-      int villainDamage = generator.Next(30);
+      int villainDamage = generator.Next(50);
       p1Hp -= villainDamage;
       p1Hp = Math.Max(0, p1Hp);
-      Typewriter($"{p2Name} träffar {p1Name} på benet.{p1Name} förlorar {villainDamage} energi.");
+      Typewriter($"{p2Name} träffar {p1Name} på benet. {p1Name} förlorar {villainDamage} energi.");
       Console.ReadLine();
     }
-
+    Console.Clear();
     Typewriter("Nu var tiden ute.");
     Typewriter("Resultatet är...");
     if (p1Hp == 0 && p2Hp == 0)
@@ -171,11 +170,11 @@ else if (choice == "Döda" || choice == "döda")
       Green($"{p2Name} har vunnit.");
       Typewriter("Du ser sin föredetta motståndare liga på marken, nästan helt livlöst.");
       Typewriter("Du börjar undra, var det en riktig människa?");
-      Typewriter("Den blöder som en vanlig männsika skulle");
+      Typewriter("Den blöder som en vanlig männsika skulle.");
       Typewriter("\"Kongratulerar, alla överlevande.\"");
-      Typewriter("Var god och gå igenom varsin dörr.");
+      Typewriter("\"Var god och gå igenom varsin dörr.\"");
       Console.Clear();
-      Långsam("");
+      Långsam("...");
       Typewriter("Nu är det bara du, i ett viten vitt rum, och en dörr med ett lås.");
       Typewriter("Du ser en lapp på golvet framför dörren och tar upp den.");
       Typewriter("\"Kommer du ihåg koden?\"");
@@ -218,10 +217,7 @@ else if (choice == "Döda" || choice == "döda")
     Typewriter("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
   }
 
-}
 
-
-Rödscreen();
 Typewriter("Var fösiktig och tryck inte ENTER för mycket annars går spelet sönder.");
 Typewriter("Tryck ENTER för att avsluta");
 Console.ReadLine();
@@ -307,7 +303,7 @@ static void Rödscreen()
   }
 
   // vänta en specific tif för att få röd skärm.
-  Thread.Sleep(100); // millisekunder
+  Thread.Sleep(50); // millisekunder
 
   // svart och röd blinkande
   for (; intensity >= 0; intensity--)
@@ -335,20 +331,20 @@ static void Grönscreen()
   {
     Console.BackgroundColor = ConsoleColor.Green;
     Console.Clear();
-    Thread.Sleep(5); 
+    Thread.Sleep(40); 
   }
 
-  Thread.Sleep(100); 
+  Thread.Sleep(90); 
 
   for (; intensity >= 0; intensity--)
   {
     Console.BackgroundColor = ConsoleColor.Green;
     Console.Clear();
-    Thread.Sleep(5); 
+    Thread.Sleep(20); 
 
     Console.BackgroundColor = ConsoleColor.Black;
     Console.Clear();
-    Thread.Sleep(2); 
+    Thread.Sleep(10); 
   }
   Console.Clear();
 }
