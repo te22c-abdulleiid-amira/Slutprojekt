@@ -358,3 +358,24 @@ void Död()
   Console.Clear();
 }
 
+// ARRAY???
+static void RödDödText() 
+{
+  // definiera en matris med ConsoleColor-värden för förgrundsfärger
+  ConsoleColor[] foregroundColors = { ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.White };
+
+  // samma sak för backgrundsfärger 
+  ConsoleColor[] backgroundColors = { ConsoleColor.Black, ConsoleColor.Blue, ConsoleColor.Green };
+
+  // text som visas
+  string[] texts = { "Du dog." };
+
+  // går igenom varje objekt i arrayerna och skriver ut texten med motsvarande färger
+  for (int i = 0; i < texts.Length; i++)
+  {
+    Console.ForegroundColor = foregroundColors[i % foregroundColors.Length];
+    Console.BackgroundColor = backgroundColors[i % backgroundColors.Length];
+    Console.WriteLine(texts[i]);
+    Console.ResetColor(); // Reset colors for next iteration
+  }
+}
