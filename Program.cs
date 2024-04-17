@@ -214,6 +214,7 @@ else if (choice == "Döda" || choice == "döda")
 
   else
   {
+    RödDödText();
     Typewriter("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
   }
 
