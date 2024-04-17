@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-25T08:28:17.509Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="gRApPyuyn8xdhJiECLQu" version="24.1.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-17T08:06:50.443Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="fFPrYqmL1fKCfjMfoU3R" version="24.1.0" type="device">
   <diagram name="Sida-1" id="VWD9b6I5cZYp6nK3HOiA">
     <mxGraphModel dx="794" dy="454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -56,7 +56,7 @@
             <mxPoint x="395" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0yk_6ONy3BAoUEa_Jc1K-14" value="Dörren tar er till nästa nivå. Ni stöter på en man med en motorsåg." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="0yk_6ONy3BAoUEa_Jc1K-14" value="Dörren tar er till nästa nivå. Ni tvingas slåss mot dubbelgångare eller fly." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="335" y="320" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="0yk_6ONy3BAoUEa_Jc1K-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="0yk_6ONy3BAoUEa_Jc1K-18" target="0yk_6ONy3BAoUEa_Jc1K-21" edge="1">
@@ -88,10 +88,10 @@
         <mxCell id="0yk_6ONy3BAoUEa_Jc1K-22" value="Du röstar på fight" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="600" y="440" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="EhDb5BekkHaGOyVgO4U8-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DwCWWLhhW6ZPlONBBc_f-3" target="DwCWWLhhW6ZPlONBBc_f-5">
+        <mxCell id="EhDb5BekkHaGOyVgO4U8-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DwCWWLhhW6ZPlONBBc_f-3" target="DwCWWLhhW6ZPlONBBc_f-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="EhDb5BekkHaGOyVgO4U8-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DwCWWLhhW6ZPlONBBc_f-3" target="DwCWWLhhW6ZPlONBBc_f-10">
+        <mxCell id="EhDb5BekkHaGOyVgO4U8-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DwCWWLhhW6ZPlONBBc_f-3" target="DwCWWLhhW6ZPlONBBc_f-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="130" y="700" />
@@ -111,6 +111,16 @@
         <mxCell id="DwCWWLhhW6ZPlONBBc_f-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DwCWWLhhW6ZPlONBBc_f-4" target="DwCWWLhhW6ZPlONBBc_f-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="X0Bw04bqXu5rvO3emcZF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="X0Bw04bqXu5rvO3emcZF-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="810" as="targetPoint" />
+            <mxPoint x="720" y="630" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="820" y="630" />
+              <mxPoint x="820" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="DwCWWLhhW6ZPlONBBc_f-4" value="Ni slåss tillbaka,&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="600" y="600" width="120" height="60" as="geometry" />
         </mxCell>
@@ -122,7 +132,7 @@
         <mxCell id="DwCWWLhhW6ZPlONBBc_f-5" value="Du överlever och tar dig till lästa nivå" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="335" y="600" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DwCWWLhhW6ZPlONBBc_f-10" value="Han dödat allihopa" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="DwCWWLhhW6ZPlONBBc_f-10" value="Han dödar dig." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="680" y="730" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DwCWWLhhW6ZPlONBBc_f-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="DwCWWLhhW6ZPlONBBc_f-13" edge="1">
@@ -143,6 +153,9 @@
         </mxCell>
         <mxCell id="DwCWWLhhW6ZPlONBBc_f-17" value="&quot;Fel kod&quot;&lt;div&gt;Ni misslyckades och tvingas vara kvar som labbrottor.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="540" y="910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X0Bw04bqXu5rvO3emcZF-2" value="Oavgjort." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="810" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
