@@ -164,7 +164,7 @@ else if (choice == "Döda" || choice == "döda")
       Död();
     }
 
-    else
+    else 
     {
       Långsam("...");
       Green($"{p2Name} har vunnit.");
