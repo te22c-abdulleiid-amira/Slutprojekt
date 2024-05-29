@@ -206,25 +206,18 @@ else if (choice == "Döda" || choice == "döda")
         Långsam("...");
         Typewriter("Om du inte listade ut koden så är den \"11037\".");
       }
-
     }
-    }
+ }
+}
 
-  }
-
-  else
-  {
-    RödDödText();
-    Typewriter("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
-  }
+else
+{
+ RödDödText();
+ Typewriter("!Om du har svårt att skriva in dina svar, tryck enter en gång innan du skriver in ditt svar!");
+}
 
 
-Typewriter("Var fösiktig och tryck inte ENTER för mycket annars går spelet sönder.");
-Typewriter("Tryck ENTER för att avsluta");
 Console.ReadLine();
-
-
-
 
 
 // Använder mig av metoden DRY (Don't repeat yourself) för att förkorta koden med hjälp av loopar.
@@ -358,6 +351,7 @@ void Död()
   Rödscreen();
   Console.Clear();
 }
+
 
 // ARRAY???
 static void RödDödText() 
